@@ -1,1 +1,3 @@
-console.log("hello, world!");
+export function Init() {
+    console.log("hello, world! - app.js");
+}
