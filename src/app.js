@@ -1,3 +1,15 @@
+import { Build as BuildHeaderSection } from "./header.js";
+import { Build as BuildHeroSection } from "./hero.js";
+import { Build as BuildDailySpecialSection } from "./dailySpecial.js";
+import { Build as BuildAboutUsSection } from "./aboutUs.js";
+import { Build as BuildContactInformationSection } from "./contactInformation.js";
+import { Build as BuildFooterSection } from "./footer.js";
+
 export function Init() {
-    console.log("hello, world! - app.js");
+    BuildHeaderSection();
+    BuildHeroSection();
+    BuildDailySpecialSection();
+    BuildAboutUsSection();
+    BuildContactInformationSection();
+    BuildFooterSection();
 }
