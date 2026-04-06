@@ -1,5 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+:root {
+    --backgroundColour: #0B1220;
+    --fontColour: #bcd0ff;
+    --fontColourBig: #83a8ff;
+    --navbarHoverFontColour: #1118ff;
+    --navbarBackgroundColour: #0F172A88;
+    --navbarBorderColour: #2a468888;
+    --borderColour: #2a4688;
+    --formBackgroundColour: #c4c4ff;
+    --navbarHeight: 20px;
+    --footerHeight: 25px;
+    --footerTopMargin: 20px;
+    --sectionBotMargin: 35px;
+    --borderSize: 6px;
+}
+
 * {
+    font-family: "MedievalSharp";
     margin: 0;
     padding: 0;
-    /* outline: red solid 1px; */
+    /* outline: 1px red solid; */
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--backgroundColour);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: var(--navbarHeight);
+}
+
+p,
+label {
+    color: var(--fontColour);
+}
+
+h1,
+h2,
+h3 {
+    color: var(--fontColourBig);
+}
+
+h2 {
+    margin-bottom: 16px;
+    font-size: 48px;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: var(--navbarHeight);
+    width: 100%;
+    background-color: var(--navbarBackgroundColour);
+    border-bottom: var(--borderSize) solid var(--navbarBorderColour);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--fontColour);
+}
+
+nav a:hover {
+    color: var(--navbarHoverFontColour);
+}
+
+footer {
+    background-color: var(--navbarBackgroundColour);
+    height: var(--footerHeight);
+    margin-top: var(--footerTopMargin);
+}
+
+section {
+    border-bottom: var(--borderSize) solid var(--borderColour);
+    padding: 16px 0 10px 0;
+}
+
+#hero {
+    width: 100vw;
+    /* linear gradient is the only way I found to darken the image */
+    background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .7)), url("./images/hero_landscape.jpg") center/cover no-repeat;
+    height: calc(100vh - var(--navbarHeight));
+    display: flex;
+    flex-direction: column;
+}
+
+#hero h1 {
+    margin-top: 34vh;
+    font-size: 64px;
+}
+
+.heroTextContainer {
+    margin-top: 15vh;
+}
+
+.dailySpecialContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 25px;
+    margin: 0 10%;
+}
+
+.dailySpecialContainer img {
+    border: var(--borderColour) 8px solid;
+    border-radius: 8px;
+    height: 200px;
+}
+
+.dailySpecialTextContainer {
+    text-align: start;
+}
+
+.dailySpecialTextContainer h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.dailySpecialTextContainer p,
+#aboutUs p {
+    margin-bottom: 6px;
+}
+
+#aboutUs :last-child {
+    font-size: 20px;
+    font-weight: 550;
+}
+
+#contactForm,
+#contactForm div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contactForm {
+    gap: 24px;
+}
+
+input,
+textarea,
+button {
+    background-color: var(--formBackgroundColour);
+    padding: 12px;
+    border-radius: 6px;
+    width: 650px;
+}
+
+textarea {
+    min-height: 165px;
+    resize: vertical;
+}
+
+button{
+    width: 675px;
+    transition: ease .35s;
+}
+
+button:hover {
+    transform: scale(1.015);
 }

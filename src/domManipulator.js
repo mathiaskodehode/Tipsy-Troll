@@ -29,5 +29,26 @@ export function CreateElement(tag, options = {}) {
     if (typeof options.onclick === "function") {
         element.onclick = options.onclick;
     }
+    if (typeof options.for === "string") {
+        element.htmlFor = options.for;
+    }
+    if (typeof options.type === "string") {
+        element.type = options.type;
+    }
+    if (typeof options.name === "string") {
+        element.name = options.name;
+    }
+    if (typeof options.placeholder === "string") {
+        element.placeholder = options.placeholder;
+    }
+    if (typeof options.required === "boolean") {
+        element.required = options.required;
+    }
     return element;
+}
+
+export function GetMain() {
+    let main = document.querySelector("main");
+    if (main == null) main = CreateElement("main");
+    return main;
 }
